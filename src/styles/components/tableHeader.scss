@@ -1,0 +1,80 @@
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff9c04;
+    padding: 0;
+    font-weight: bold;
+    width: 100%;
+  
+    .header-item {
+      text-align: center;
+      padding: 5px;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      display: flex;
+      display: grid;
+      align-items: center;
+    }
+  
+    .product {
+      width: 12.7%;
+    }
+  
+    .description {
+      width: 18.8%;
+    }
+  
+    .size-container {
+      display: flex;
+      width: 15.6%;
+      flex-direction: column;
+    }
+  
+    .size-top {
+      flex: 1;
+      text-align: center;
+      //border-bottom: 1px solid #ce2727;
+      border: 1px solid #000;
+      padding: 5px;
+    }
+  
+    .size-bottom {
+      display: flex;
+      flex: 1;
+    }
+  
+    .size-item {
+      flex: 1;
+      width: 5.2%;
+      text-align: center;
+      padding: 5px;
+      border: 1px solid #000;
+    }
+  
+    .unit {
+      width: 5.2%;
+    }
+  
+    .weight {
+      width: 5.2%;
+    }
+  
+    .price {
+      width: 7.8%;
+    }
+  
+    .total {
+      width: 10.7%;
+    }
+  
+    .note {
+      width: 10.7%;
+    }
+  
+    .reference-image {
+      width: 11%;
+    }
+    .delete{
+      width: 2.3%
+    }
+  }

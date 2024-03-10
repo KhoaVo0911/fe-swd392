@@ -1,0 +1,47 @@
+
+
+const blogs = [
+    {
+        id: '1',
+        slug:'Best-Architecture-Design',
+        title: 'Best Architecture Design',
+        thumb:'Architecture',
+        image: "https://dghome3d.com/blogs/quiet-luxury-su-tinh-te-trong-thiet-ke-noi-that-byazcn2AhI",
+        description: 'Consectetur adipiscing elit. Purusout phasellus malesuada lectus.',
+        author: 'Khoa Vo',
+        authorTitle:'Vo Dang Khoa',
+        create_at: '19 Jan, 2024',
+        blogSingleImg:"https://data.dghome3d.com/blogs/b0IQFA1Sww/pictures/396c6a34434c6e674b7270346262354b5a76324763.jpg", 
+        comment:'35',
+        blClass:'format-standard-image',
+    },
+    {
+        id: '2',
+        slug:'Modern-Bedrooms-Tips',
+        title: 'Modern Bedrooms Tips',
+        thumb:'Interior',
+        image: "https://data.dghome3d.com/blogs/be9X9hoMeg/pictures/45513661535a4c366d5338475877387439314f3061.jpg",
+        description: 'Consectetur adipiscing elit. Purusout phasellus malesuada lectus.',
+        author: 'Vo Dang Khoa',
+        authorTitle:'Khoa Vo',
+        create_at: '19 Jan, 2024',
+        blogSingleImg:"https://data.dghome3d.com/blogs/b0IQFA1Sww/pictures/4e50354c48465f394d7761687048475557346e5070.jpg", 
+        comment:'80',
+        blClass:'format-standard-image',
+    },
+    {
+        id: '3',
+        slug:'Decoration-Apartment',
+        title: 'Decoration Apartment',
+        thumb:'Architecture',
+        image: "https://data.dghome3d.com/blogs/b0IQFA1Sww/pictures/63653061464e4e7a5449774a356354794f38753963.jpg",
+        description: 'Consectetur adipiscing elit. Purusout phasellus malesuada lectus.',
+        author: 'Vo Dang Khoa',
+        authorTitle:'Khoa Vo',
+        create_at: '9 Jan, 2024',
+        blogSingleImg:"https://data.dghome3d.com/blogs/bzmhG7wue0/pictures/54684b64305a584d75564b437a776d692d4e384b73.jpg",
+        comment:'95',
+        blClass:'format-standard-image',
+    },
+];
+export default blogs;

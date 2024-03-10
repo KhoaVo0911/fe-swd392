@@ -1,0 +1,74 @@
+@import "../variable/variable.scss";
+@import "../variable/mixin.scss";
+
+.wpo-service-area-s2 {
+    padding: 0 100px;
+    padding-bottom: 90px;
+
+    @media (max-width: 1400px) {
+        padding: 0 50px;
+    }
+    @media (max-width: 1400px) {
+        padding: 0 15px;
+    }
+    @media (max-width: 991px) {
+        padding: 0;
+        padding-bottom: 70px;
+    }
+
+    .wpo-service-item {
+        margin-bottom: 30px;
+        .wpo-service-img {
+            overflow: hidden;
+            img {
+                width: 100%;
+                transform: scale(1);
+                transition: all 0.3s;
+                min-height: 480px;
+                object-fit: cover;
+
+                @media (max-width: 991px) {
+                    min-height: 300px;
+                }
+                @media (max-width: 575px) {
+                    min-height: 100%;
+                }
+            }
+        }
+
+        &:hover {
+            .wpo-service-img {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        .wpo-service-text {
+            box-shadow: 1px 2px 6px 1px rgba(163, 169, 227, 0.25);
+            padding: 20px 30px;
+
+            @media (max-width: 1400px) {
+                padding: 20px;
+            }
+
+            h2 {
+                margin-bottom: 0;
+                font-size: 25px;
+                font-weight: 500;
+
+                @media (max-width: 1400px) {
+                    font-size: 20px;
+                }
+
+                a {
+                    color: $dark-gray;
+
+                    &:hover {
+                        color: $theme-primary-color-s2;
+                    }
+                }
+            }
+        }
+    }
+}

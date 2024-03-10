@@ -1,0 +1,399 @@
+.table-body {
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 0;
+    width: 100%;
+    font-weight: normal;
+    border-collapse: collapse;
+  
+    .table-cell {
+      text-align: center;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      page-break-inside: auto;
+      white-space: pre-wrap;
+      border: 1px solid #000; /* Điều chỉnh border theo ý muốn */
+      box-sizing: border-box; /* Sử dụng box-sizing để tính toán kích thước */
+    }
+
+    @media print {
+      .noprint-border {
+        border: none !important;
+      }
+      .toggle-icon {
+        display: none;
+      }
+    }
+
+    .product {
+        width: 12.7%;
+        text-align: start;
+        white-space: pre-wrap;
+    }
+
+    .description,
+    .note {
+        width: 18.8%;
+        text-align: start;
+        white-space: pre-wrap;
+    }
+
+    .size-item {
+        width: 15.6%;
+        border-radius: 1;
+        text-align: center;
+    }
+
+    .unit {
+        width: 5.2%;
+    }
+
+    .weight {
+        width: 5.2%;
+    }
+
+    .price {
+        width: 7.8%;
+    }
+
+    .total {
+        width: 10.7%;
+        white-space: pre-wrap;
+    }
+
+    .note {
+        width: 10.7%;
+    }
+
+    .reference-image {
+        width: 11%;
+    }
+    .delete-button{
+      width: 2.3%;
+    }
+}
+
+.add-row-button {
+    background-color: #ffffff;
+    color: #007BFF;
+    border: none;
+    width: 100%;
+    padding: 5px 200px; 
+    border-radius: 5px;
+    border: 1px solid #007BFF;
+    border-color: #007BFF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    margin: 5px auto; /* Canh giữa theo chiều dọc và giữa màn hình */
+  }
+  
+  .add-row-button i {
+    margin-right: 5px;
+    font-size: 18px;
+  }
+  
+  .add-row-button:hover {
+    //background-color: #0056b3;
+  }
+
+  .size-item {
+    width: 15.6%;
+    border: none; /* Loại bỏ border */
+    padding: 0; /* Loại bỏ padding */
+  }
+
+  // .size-item {
+  //   width: 5.2%;
+  //   border: none; /* Loại bỏ border */
+  //   padding: 0; /* Loại bỏ padding */
+  // }
+  .delete-buttonn{
+    padding: 0;
+    background-color: #fcfcfc; /* Màu nền của nút */
+    color: #000000; /* Màu chữ trên nút */
+    //padding: 2px 5px; /* Kích thước của nút */
+    border: none; /* Loại bỏ viền */
+    cursor: pointer;
+  }
+  
+  /* Hoặc nếu bạn muốn giữ lại padding nhưng muốn loại bỏ border và điều chỉnh kích thước */
+  .size-item input {
+    width: 80%; /* Điều chỉnh kích thước */
+    //border: none; /* Loại bỏ border */
+    height: 20px;
+    text-align: center;
+    //border-bottom: 1px dotted #060607; /* Thêm gạch chân dưới ô input */
+    transition: border-bottom 0.2s;
+  }
+  .size-item input:focus {
+    outline: none; /* Loại bỏ viền khi ô input được focus */
+    border-color: #007BFF; /* Thay đổi màu border khi ô input được focus */
+    border-bottom: 2px solid #007BFF; /* Thay đổi gạch chân thành đường kẻ đứng khi ô input được focus */
+  }
+
+  .table-footer {
+    width: 100%;
+    margin-top: 0px; /* Khoảng cách giữa bảng chính và bảng footer */
+    border-collapse: collapse;
+    background-color: #f7f7f7;
+  }
+  
+  .table-footer td {
+    //border: 1px solid #ccc; /* Border cho các ô trong bảng */
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .table-footer .footer-title {
+    font-weight: bold; /* Đặt đậm cho tiêu đề */
+    background-color: #e6e6e6; /* Màu nền cho tiêu đề */
+  }
+  
+  .table-footer .footer-total {
+    background-color: #f2f2f2; /* Màu nền cho cột tổng giá tiền */
+  }
+  .footer-title{
+    width: 65.3%;
+  }
+  .footer-total{
+    font-weight: bold;
+    width: 10.7%;
+  }
+  .footer-totdescriptional{
+    width: 13.3%;
+  }
+  .footer-note{
+    width: 10.7%;
+  }
+
+.context-menu {
+    position: absolute;
+    text-align: center;
+    background-color: #fff;
+    height: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 0px;
+    z-index: 1000;
+    min-width: 50px; /* Điều chỉnh kích thước menu theo ý muốn */
+    display: block;
+    align-items: center;
+  }
+  
+  /* Các mục trong menu */
+  .context-menu > div {
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .context-menu > div:hover {
+    background-color: #f5f5f5;
+  }
+  .select__control {
+    white-space: normal;
+    border: none;
+    text-align: start;
+    width: 100%;
+  }
+  
+  .table-cell.reference-image {
+    width: 11%;
+    /* Thêm max-width và max-height để giữ kích thước tỷ lệ của hình ảnh */
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .table-cell.reference-image img {
+    /* Thêm width và height để hình ảnh tự động scale theo kích thước của ô */
+    width: 100%;
+    height: auto;
+  }
+  .custom-description-select {
+    width: 100%; /* Điều chỉnh chiều rộng */
+    white-space: pre-wrap;
+    background-color: #f0f0f0;
+    font-size: 14px;
+  }
+  
+  
+  .custom-description-select:hover {
+    background-color: #e0e0e0; /* Màu nền khi hover */
+  }
+
+  .image-modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000; /* Đảm bảo modal che phủ nền */
+  }
+
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.large-image {
+  max-width: 90%; 
+  max-height: 90vh; 
+  display: block; 
+  margin: 0 auto; 
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+}
+
+.selected-option {
+  border: 1px solid #ccc;
+  padding: 5px;
+  padding-right: 10px;
+  cursor: pointer;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.options {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-height: 1000%;
+  overflow-y: auto;
+}
+
+.options .option {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.options .option:hover {
+  background-color: #f0f0f0; /* Change the background color on hover */
+}
+
+
+.option {
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* CSS cho dropdown */
+/* CSS cho dropdown */
+.custom-select.active .options {
+  display: block;
+  z-index: 10000; /* Điều chỉnh z-index ở đây */
+  position: absolute;
+  top: 100%; /* Điều chỉnh khoảng cách giữa dropdown và phần tử cha */
+  left: 0;
+  border: 1px solid #ccc;
+  right: 0;
+}
+
+
+/* CSS cho hàng (table-row) */
+.table-row {
+  position: relative; /* Đảm bảo rằng các phần tử con bên trong nó không bị che */
+  //z-index: 0; /* Điều chỉnh z-index ở đây để đảm bảo rằng dropdown sẽ hiển thị trên hàng khác */
+}
+
+/* TableBody.scss */
+.slideshow-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8); /* Điều chỉnh màu nền và độ mờ tại đây */
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CSS cho slideshow container */
+.slideshow-container {
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+.multy-picture{
+  font-weight: bolder;
+}
+.reference-image-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 160px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.reference-image-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+input:disabled {
+  cursor: not-allowed; 
+  background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(59, 59, 59, 0.3));
+  color: #070707; 
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+
+
+
+
+

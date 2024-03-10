@@ -1,0 +1,44 @@
+@import "../variable/variable.scss";
+.theme-btn, .view-cart-btn, .theme-btn-s3, .theme-btn-s4 {
+    background: #CAAB06;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    padding: 15px 45px;
+    border: 0;
+    text-transform: capitalize;
+    -webkit-backface-visibility: hidden;
+    z-index: 1;
+    position: relative;
+    font-size: 16px;
+    font-size: 1.0666666667rem;
+    transition: all 0.3s;
+}
+
+
+.view-cart-btn {
+	@extend .theme-btn;
+	display: block;
+	margin-top: 15px;
+	border-radius: 5px;
+	padding: 10px 45px;
+	background: $theme-primary-color;
+	color: $white;
+
+	&:after{
+		display: none;
+	}
+	&:hover{
+		background-color: darken($theme-primary-color, 8%);
+	}
+
+	&.s1{
+		background: transparentize($theme-primary-color, .8);
+		color: $theme-primary-color-s2;
+
+		&:hover{
+			background-color: darken(#ddd, 8%);
+		}
+	}
+
+}

@@ -1,0 +1,306 @@
+.quotation-form {
+    font-family: Arial, sans-serif;
+    //display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 0 auto;
+    font-size: 12px;
+  
+    .logo img {
+      max-width: 60px;
+      height: auto;
+    }
+    @media print {
+      .noprint-border {
+        border: none !important;
+      }
+      .toggle-icon {
+        display: none;
+      }
+    }
+  
+    .text-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .left-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 7px;
+  
+      div {
+        margin-bottom: 13px;
+      }
+    }
+  
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding: 0px 0px 5px 0px;
+      border: none;
+      border-bottom: 1px solid transparent;
+      background-color: transparent;
+      font-size: 12px;
+      font-weight: bold;
+      color: rgb(8, 8, 8);
+      width: 100%;
+      margin-top: -35px;
+  
+      &:after {
+        content: '\25BC';
+        position: absolute;
+        top: 0;
+        right: 0;
+        pointer-events: none;
+      }
+  
+      &::-ms-expand {
+        display: none;
+      }
+  
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid transparent;
+      }
+    }
+  
+  
+    .right-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 50px;
+      flex-wrap: wrap;
+    }
+  
+    .right-text div strong {
+      margin-bottom: 1px;
+    }
+  
+    .right-text input[type="text"] {
+      border: none;
+      overflow-y: auto;
+      padding: 5px;
+      transition: border 0.3s;
+      width: 300px;
+      height: 20px;
+      align-items: flex-start;
+      background-color: transparent;
+      //flex: 1;
+      margin-top: 0px;
+      margin-right: 10px;
+      margin-left: 0px;
+    }
+  
+    .right-text input[type="text"]:focus {
+      outline: none;
+    }
+  
+  
+    .supplier-selection {
+      align-self: flex-start;
+      margin-top: 0px;
+      width: 100%;
+  
+      label {
+        font-weight: bold;
+        display: block;
+      }
+    }
+  
+    .price-table {
+      width: 100%;
+      margin-top: 10px;
+      text-align: center;
+      align-self: center;
+  
+      table {
+        width: 100%;
+        border-collapse: collapse;
+  
+        th,
+        td,
+  
+        th {
+          background-color: #f2f2f2;
+        }
+  
+        tr:nth-child(even) {
+          background-color: #f2f2f2;
+        }
+  
+        tr:hover {
+          background-color: #ddd;
+        }
+  
+        img {
+          max-width: 50px;
+          height: auto;
+        }
+      }
+    }
+  }
+  
+  .center-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .centered-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  // .small-combobox-container {
+  //   flex: 0.16;
+  // }
+  
+  .small-combobox {
+    width: 100%;
+    max-width: 100%;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: 510;
+    background-color: #fff;
+    font-size: 14px;
+    color: #fd0606;
+    margin-bottom: 5px;
+    transition: border-color 0.3s;
+    // Nếu bạn muốn thêm styles cho dropdown active, bạn có thể thêm dưới đây
+  }
+  
+  .small-combobox:focus {
+    outline: none;
+    border-color: #007BFF;
+    // Styles cho combobox khi focus
+  }
+  
+  
+  .small-textbox {
+    margin-left: 50px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px dotted #fff;
+    background-color: transparent;
+  }
+  
+  .small-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .selected-option {
+    border: 1px solid #fffdfd;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  /* Style for the dropdown container */
+  .dropdown-container {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+  }
+  
+  /* Style for the dropdown button */
+  .dropdown-button {
+    max-width: 9%;
+    padding: 10px;
+    background-color: #fffafa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-button:hover {
+    background-color: #f0f0f0; // Màu nền khi hover
+  }
+  
+  /* Style for the dropdown content */
+  .dropdown-content {
+    position: absolute;
+    background-color: #fffafa;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    z-index: 1;
+    max-width: 14%;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; // Sẽ hiển thị khi dropdown mở
+  }
+  .dropdown-container:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Style for dropdown options */
+  .dropdown-option {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .react-joyride__beacon {
+    position: fixed;
+    top: 20px; /* Đặt top để điều chỉnh vị trí theo yêu cầu của bạn */
+    right: 20px; /* Đặt right để điều chỉnh vị trí theo yêu cầu của bạn */
+    background-color: #0073e6; /* Đặt màu nền của nút theo ý muốn của bạn */
+    color: #0073e6; /* Đặt màu chữ cho văn bản theo ý muốn của bạn */
+    padding: 10px 20px; /* Điều chỉnh lề và kích thước nút theo yêu cầu của bạn */
+    border: none; /* Loại bỏ viền nếu bạn muốn */
+    cursor: pointer;
+  }
+  
+  /* Highlight on hover */
+  .dropdown-option:hover {
+    background-color: #ddd;
+  }
+  
+  /* CSS cho biểu tượng mũi tên xuống */
+  .dropdown-button::after {
+    content: " ▼"; // Thay đổi biểu tượng thành mũi tên Unicode ▶
+    position: absolute; // Đặt biểu tượng ở vị trí tuyệt đối
+    top: 50%; // Đặt biểu tượng ở giữa theo chiều dọc
+    right: 5px; // Đặt biểu tượng cách phía bên phải 5px
+    transform: translateY(-50%); // Căn giữa theo chiều dọc
+    font-size: 12px; // Kích thước biểu tượng
+  }
+  
+  /* Add this CSS to your stylesheet */
+  .note-2 {
+    margin-top: 20px; /* Adjust the margin as needed */
+    text-align: center; /* Center-align the note */
+  }
+  
+  .note-text {
+    font-size: 14px;
+    color: #777; /* Change the text color as desired */
+  }
+  
+  .note-text a {
+    color: #0073e6; /* Customize link color */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .note-text a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
