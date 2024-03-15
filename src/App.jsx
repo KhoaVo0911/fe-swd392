@@ -17,7 +17,7 @@ import { PAGE_ROUTES } from "./utils/constant";
 import StaffRole from "./module/staff";
 import StaffProjects from "./module/staff/Projects";
 import StaffQuotation from "./module/staff/Quotation";
-import StaffProducts from "./module/staff/Products/"
+import StaffProducts from "./module/staff/Products/";
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
       <Route path="/project" element={<ProjectPage />} />
       <Route path="/project/project-single" element={<ProjectSingle />} />
       <Route path="/blog" element={<BlogPage />} />
-      <Route path="/blog/blog-detail" element={<BlogDetailPage />} />
+      <Route path="/blog/:slug" element={<BlogDetailPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/quotation" element={<QuotationPage />} />
       <Route path="/shop" element={<ShopItem />} />

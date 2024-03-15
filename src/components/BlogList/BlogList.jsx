@@ -18,7 +18,7 @@ const BlogList = () => {
                                     key={bitem}
                                 >
                                     <div className="entry-media video-holder">
-                                        <img src={blog.blogSingleImg} alt="" />
+                                        <img src={blog.image} alt="" />
                                     </div>
                                     <div className="entry-meta">
                                         <ul>
@@ -39,7 +39,7 @@ const BlogList = () => {
                                     <div className="entry-details">
                                         <h3>
                                             <Link
-                                                to="/blog/blog-detail"
+                                                to={`/blog/${blog.slug}`}
                                                 onClick={ClickHandler}
                                             >
                                                 {blog.title}
@@ -54,7 +54,7 @@ const BlogList = () => {
                                             to a challenge.
                                         </p>
                                         <Link
-                                            to="/blog/blog-detail"
+                                            to={`/blog/${blog.slug}`}
                                             onClick={ClickHandler}
                                             className="read-more"
                                         >

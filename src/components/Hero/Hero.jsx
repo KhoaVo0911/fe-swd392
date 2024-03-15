@@ -10,10 +10,10 @@ const Hero = () => {
                             <div className="col-xl-6 col-lg-7 col-12">
                                 <div className="static-hero-inner">
                                     <div data-swiper-parallax="200" className="slide-visible-text">
-                                        <h2>Unique</h2>
+                                        <h2>Interior</h2>
                                     </div>
                                     <div data-swiper-parallax="300" className="slide-title">
-                                        <h2>Creating Your Future With <span>Affection</span></h2>
+                                        <h2>Construction Quotation System </h2>
                                     </div>
                                     <div data-swiper-parallax="400" className="slide-btn">
                                         <a href="/project" className="theme-btn">Discover Project</a>
@@ -28,7 +28,7 @@ const Hero = () => {
             <div className="static-hero-right">
                 <div className="static-hero-img">
                     <div className="static-hero-img-inner">
-                        <img src='https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt=""/>
+                        <img src='https://img.freepik.com/free-psd/3d-illustration-isometric-room_23-2150102464.jpg' alt=""/>
                     </div>
                 </div>
             </div>

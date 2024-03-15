@@ -72,15 +72,15 @@ const ProjectSingle = () => {
                   </div>
                   <div className="wpo-project-single-main-img">
                     <img
-                      src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                      src="https://data.dghome3d.com/templates/cl56vl3qg0009bxkl44pyuyu3/pictures/39744c4634446e34384f576632724430736f392d49.jpg"
                       alt=""
                     />
                     <img
-                      src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                      src="https://data.dghome3d.com/templates/cl56vl3qg0009bxkl44pyuyu3/pictures/6a3239584c5635342d77683438565f546164793334.jpg"
                       alt=""
                     />
                     <img
-                      src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                      src="https://data.dghome3d.com/templates/cl56vl3qg0009bxkl44pyuyu3/pictures/4b7176686543626970706a76527378303351496274.jpg"
                       alt=""
                     />
                   </div>
@@ -150,7 +150,7 @@ const ProjectSingle = () => {
                       <div className="col-md-6 col-sm-6 col-12">
                         <div className="wpo-p-details-img">
                           <img
-                            src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            src="https://data.dghome3d.com/templates/cl56vl3qg0009bxkl44pyuyu3/pictures/334f4c464d6f564f7262737143567737696350524c.jpg"
                             alt=""
                           />
                         </div>
@@ -158,7 +158,7 @@ const ProjectSingle = () => {
                       <div className="col-md-6 col-sm-6 col-12">
                         <div className="wpo-p-details-img">
                           <img
-                            src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            src="https://data.dghome3d.com/templates/cl56vl3qg0009bxkl44pyuyu3/pictures/34754c77416d3354474539437345334869594d456b.jpg"
                             alt=""
                           />
                         </div>
@@ -166,7 +166,7 @@ const ProjectSingle = () => {
                       <div className="col-md-6 col-sm-6 col-12">
                         <div className="wpo-p-details-img">
                           <img
-                            src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            src="https://data.dghome3d.com/templates/cl56vl3qg0009bxkl44pyuyu3/pictures/567a4d696f486f7047472d7a6a456977557335384f.jpg"
                             alt=""
                           />
                         </div>
@@ -174,7 +174,7 @@ const ProjectSingle = () => {
                       <div className="col-md-6 col-sm-6 col-12">
                         <div className="wpo-p-details-img">
                           <img
-                            src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            src="https://data.dghome3d.com/templates/cl56vl3qg0009bxkl44pyuyu3/pictures/6e3949334e524b6654317531505530695351416230.jpg"
                             alt=""
                           />
                         </div>
