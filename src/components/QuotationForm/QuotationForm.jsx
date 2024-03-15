@@ -14,7 +14,7 @@ const QuotationForm = () => {
                     </div>
                     <div>
                         <strong>Số điện thoại:</strong>
-                        <span>028 7300 1866</span>
+                        <span>039 999 7857</span>
                     </div>
                     <div>
                         <strong>Showroom:</strong>
