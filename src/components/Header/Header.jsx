@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../../styles/components/header.scss";
 import MobileMenu from "../MobileMenu/MobileMenu";
-// import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CloseIcon from "@mui/icons-material/Close";
 import SearchIcon from "@mui/icons-material/Search";
 import { Button } from "antd";
-import { FiUser } from "react-icons/fi";
+import { FiUser, FiUserX } from "react-icons/fi";
 import { useNavigate } from "react-router";
 import { PAGE_ROUTES } from "../../utils/constant";
 
 const Header = () => {
   const [menuActive, setMenuState] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
   // const [cartActive, setcartState] = useState(false);
 
@@ -21,6 +21,19 @@ const Header = () => {
   const SubmitHandler = (e) => {
     e.preventDefault();
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    navigate(PAGE_ROUTES.LOGIN);
+  }
+
+  useEffect(() => {
+    const accessToken = localStorage.getItem("accessToken")
+    if (accessToken) {
+      setIsAuthenticated(true);
+    }
+  },[]);
+  
 
   return (
     <header id="header">
@@ -40,15 +53,12 @@ const Header = () => {
                     className="navbar-brand"
                     href="/home"
                   >
-                    <img src="Logo" alt="logo" />
+                    <img src="images/logo.png" alt="logo" />
                   </a>
                 </div>
               </div>
               <div className="col-lg-6 col-md-1 col-1">
-                <div
-                  id="navbar"
-                  className="collapse navbar-collapse navigation-holder"
-                >
+                <div id="navbar">
                   <button className="menu-close">
                     <CloseIcon className="ti-close"></CloseIcon>
                   </button>
@@ -104,7 +114,9 @@ const Header = () => {
                       </button>
                       <div
                         className={`header-search-form ${
-                          menuActive ? "header-search-content-toggle" : ""
+                          menuActive
+                            ? "header-search-content-toggle"
+                            : ""
                         }`}
                       >
                         <form onSubmit={SubmitHandler}>
@@ -123,12 +135,25 @@ const Header = () => {
                     </div>
                   </div>
 
-                  <Button
-                    shape="circle"
-                    size="large"
-                    icon={<FiUser />}
-                    onClick={() => navigate(PAGE_ROUTES.LOGIN)}
-                  ></Button>
+                  {isAuthenticated ? (
+                    <>
+                      <Button
+                        shape="circle"
+                        size="large"
+                        icon={<FiUser />}
+                        onClick={() => handleLogout()}
+                      ></Button>
+                    </>
+                  ) : (
+                    <>
+                      <Button
+                        shape="circle"
+                        size="large"
+                        icon={<FiUser />}
+                        onClick={() => navigate(PAGE_ROUTES.LOGIN)}
+                      ></Button>
+                    </>
+                  )}
                 </div>
               </div>
             </div>

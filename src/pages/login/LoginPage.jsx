@@ -1,19 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../styles/pages/loginPage.scss";
 import Grid from "@mui/material/Grid";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { FORM_RULES, PAGE_ROUTES } from "../../utils/constant";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { useMutation } from "@tanstack/react-query";
 import AuthenticateAPI from "../../api/authen";
 import { Button, Col, Form, Input, Row, message } from "antd";
+import { Users } from "../../api/database";
 
 const LoginPage = () => {
     const [form] = Form.useForm();
     const navigate = useNavigate();
     const [remember, setRemember] = useState(false);
     const [messageApi, contextHolder] = message.useMessage();
+    const [users, setUsers] = useState([]);
 
     const { mutate, isPending } = useMutation({
         mutationFn: AuthenticateAPI.LoginAccount,
@@ -31,13 +33,26 @@ const LoginPage = () => {
         setRemember(e.target.checked);
     };
 
+
     // Định nghĩa hàm submitForm
     const submitForm = (values) => {
-        mutate({ ...values, remember });
+        //mutate({ ...values, remember }); // Xử lý gọi API
+        // Xử lý đăng nhập với dummy data
+        const user = users.find((user) => user.mail === values.username && user.password === values.password);
+        if (user) {
+            localStorage.setItem("accessToken", user.token);
+            navigate(PAGE_ROUTES.BLOG.MAIN);
+        } else {
+            messageApi.error("Tài khoản của bạn không hợp lệ. Vui lòng thử lại!!");
+        }
     };
   // const submitForm = (values) => {
   //     mutate(values);
   // };
+
+  useEffect(() => {
+    setUsers(Users);
+  }, []);
 
   return (
     <Grid container className="loginWrapper">

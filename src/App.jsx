@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import ContactPage from "./pages/contact/ContactPage";
 import HomePage from "./pages/home/HomePage";
@@ -18,31 +18,47 @@ import StaffRole from "./module/staff";
 import StaffProjects from "./module/staff/Projects";
 import StaffQuotation from "./module/staff/Quotation";
 import StaffProducts from "./module/staff/Products/";
+import { useEffect } from "react";
 
 function App() {
+  const access_token = localStorage.getItem("accessToken");
+  const isAuthenticated = access_token ? true : false;
+
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/project" element={<ProjectPage />} />
-      <Route path="/project/project-single" element={<ProjectSingle />} />
+      <Route
+        path="/project/project-single"
+        element={<ProjectSingle />}
+      />
       <Route path="/blog" element={<BlogPage />} />
-      <Route path="/blog/:slug" element={<BlogDetailPage />} />
+      <Route path="/blog/:id" element={<BlogDetailPage />} />
       <Route path="/contact" element={<ContactPage />} />
-      <Route path="/quotation" element={<QuotationPage />} />
+      <Route path="/quotation" element={isAuthenticated ? <QuotationPage /> : <Navigate to={'/login'} />}/>
       <Route path="/shop" element={<ShopItem />} />
       <Route path="/shop/item/:productId" element={<ItemDetail />} />
       <Route path="/login" index element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+      <Route
+        path="/forgot-password"
+        element={<ForgotPasswordPage />}
+      />
 
       <Route path={PAGE_ROUTES.STAFF.MAIN} element={<StaffRole />}>
-        <Route path={PAGE_ROUTES.STAFF.PROJECTS} element={<StaffProjects />} />
+        <Route
+          path={PAGE_ROUTES.STAFF.PROJECTS}
+          element={<StaffProjects />}
+        />
         <Route
           path={PAGE_ROUTES.STAFF.QUOTATIONS}
           element={<StaffQuotation />}
         />
-        <Route path={PAGE_ROUTES.STAFF.PRODUCTS} element={<StaffProducts />} />
+        <Route
+          path={PAGE_ROUTES.STAFF.PRODUCTS}
+          element={<StaffProducts />}
+        />
       </Route>
     </Routes>
   );

@@ -1,9 +1,35 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import blogs from "../../api/blogs";
+import { Blogs } from "../../api/database";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 const BlogList = () => {
+    const [blogs, setBlogs] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        initData(Blogs);
+    }, []);
+
     const ClickHandler = () => {
         window.scrollTo(10, 0);
     };
+
+    // Xử lý lấy dữ liệu dummy data
+    const initData = (data) => {
+        data.forEach((blog) => {
+            blog.date = new Date(blog.date).toLocaleDateString("en-GB", { // Format date to 'dd MMM, YYYY'
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+            });
+        });
+        setBlogs(data);
+        setLoading(false);
+    };
+
+    if (loading) return <div>Loading...</div>;
+
     return (
         <section className="wpo-blog-pg-section section-padding">
             <div className="container">
@@ -18,43 +44,30 @@ const BlogList = () => {
                                     key={bitem}
                                 >
                                     <div className="entry-media video-holder">
-                                        <img src={blog.image} alt="" />
+                                        <img src={blog.image[0]} alt="" />
                                     </div>
                                     <div className="entry-meta">
                                         <ul>
                                             <li>
-                                                <i className="fi ti-user"></i>{" "}
-                                                By <a href="/">{blog.author}</a>{" "}
-                                            </li>
-                                            <li>
-                                                <i className="fi ti-comment-alt"></i>{" "}
-                                                Comments {blog.comment}
-                                            </li>
-                                            <li>
                                                 <i className="fi flaticon-calendar"></i>{" "}
-                                                {blog.create_at}
+                                                {blog.date}
                                             </li>
                                         </ul>
                                     </div>
                                     <div className="entry-details">
                                         <h3>
                                             <Link
-                                                to={`/blog/${blog.slug}`}
+                                                to={`/blog/${blog.blogId}`}
                                                 onClick={ClickHandler}
                                             >
                                                 {blog.title}
                                             </Link>
                                         </h3>
                                         <p>
-                                            Law is a great career path if you
-                                            want to build a broad skill set that
-                                            includes everything from critical
-                                            thinking and strategic planning to
-                                            communications. If you love rising
-                                            to a challenge.
+                                            {blog.description}
                                         </p>
                                         <Link
-                                            to={`/blog/${blog.slug}`}
+                                            to={`/blog/${blog.id}`}
                                             onClick={ClickHandler}
                                             className="read-more"
                                         >

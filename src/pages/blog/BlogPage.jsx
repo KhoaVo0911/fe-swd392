@@ -9,6 +9,7 @@ const BlogPage = () => {
     <Fragment>
       <Navbar></Navbar>
       <PageTitle pageTitle="Latest News" pagesub="blog" />
+      {/* <BlogList /> */}
       <BlogList />
       <Footer />
     </Fragment>
